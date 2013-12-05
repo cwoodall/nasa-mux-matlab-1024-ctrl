@@ -3,7 +3,7 @@ fopen(s);
 
 %%
 vref = 2.9; % Reference voltage on the ADC
-desiredV = 0.5*vref;
+desiredV = 0.5*vref + 0*(2.9 /(2^12));% Add a LSB change, JPK
 startAddr = hex2dec('1000');
 endAddr = startAddr +255;
 

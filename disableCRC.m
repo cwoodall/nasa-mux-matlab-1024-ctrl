@@ -1,9 +1,6 @@
 function err = disableCRC(s)
-%WRITECHANNEL Summary of this function goes here
-%   Detailed explanation goes here
-    % Change COM port as needed 
-    % (look in Device Manager).
-    %value = input('What value do you want the AD5504 to be? (hex value)', 's');
+%disableCRC disables the crc message from being sent.
+%   Sends the message
     fwrite(s, 129, 'uint8');
     fwrite(s, 240, 'uint8');
     fwrite(s, 191, 'uint8');

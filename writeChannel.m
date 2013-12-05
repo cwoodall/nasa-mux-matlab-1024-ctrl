@@ -4,10 +4,10 @@ function err = writeChannel( s, ch, voltage, vref)
     % Change COM port as needed 
     % (look in Device Manager).
     resolution = 12;
-    code = uint16(((2^resolution - 1)*voltage/vref));
+    code = uint16(((2^resolution)*voltage/vref));
     ch = uint16(ch);
-    lchar = bitand(255, code)
-    hchar = bitand(255, bitsrl(code, 8))
+    lchar = bitand(255, code);
+    hchar = bitand(255, bitsrl(code, 8));
 %    
     laddr = bitand(255, uint16(ch));
     haddr = bitand(255, bitsrl(uint16(ch),8));
